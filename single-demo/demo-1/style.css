@@ -1,0 +1,43 @@
+.content {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+.left-bg,
+.right-bg {
+  overflow: hidden;
+}
+.left-bg {
+  background-color: thistle;
+}
+.right-bg {
+  background-color: lavenderblush;
+}
+picture {
+  width: 100%;
+  height: 100%;
+  clip-path: ellipse(30% 35%);
+  -webkit-clip-path: ellipse(30% 35%);
+  transition-property: clip-path, -webkit-clip-path;
+  transition-duration: 1.6s;
+  transition-timing-function: cubic-bezier(0.25, 0.74, 0.22, 0.99);
+  display: block;
+}
+picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  -webkit-transition: transform 1.6s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+  transition: transform 1.6s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+}
+.left-bg:hover picture,
+.right-bg:hover picture {
+  clip-path: ellipse(75% 75%);
+}
+.left-bg:hover picture img,
+.right-bg:hover picture img {
+  -webkit-transform: scale(1.06);
+  transform: scale(1.06);
+}

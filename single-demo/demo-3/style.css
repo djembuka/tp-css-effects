@@ -1,0 +1,94 @@
+body {
+  background-color: cadetblue;
+  overflow: hidden;
+}
+.page {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./images/1.jpg') no-repeat center;
+  background-size: cover;
+  opacity: 0.5;
+  z-index: 10;
+
+  -webkit-transition: -webkit-transform 1.6s
+    cubic-bezier(0.25, 0.74, 0.22, 0.99);
+  transition: transform 1.6s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.animate .background {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), transparent 50%),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  z-index: 11;
+}
+.word {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  color: #dcc5b7;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-size: 15vw;
+  text-transform: uppercase;
+  z-index: 20;
+
+  -webkit-transition: -webkit-clip-path 2.5s
+      cubic-bezier(0.25, 0.74, 0.22, 0.99) 0.5s,
+    -webkit-transform 2.5s cubic-bezier(0.25, 0.74, 0.22, 0.99) 0.5s;
+  transition: clip-path 2.5s cubic-bezier(0.25, 0.74, 0.22, 0.99) 0.5s,
+    transform 2.5s cubic-bezier(0.25, 0.74, 0.22, 0.99) 0.5s;
+
+  -webkit-transform: translateX(-50%) translateY(50px);
+  transform: translateX(-50%) translateY(50px);
+
+  -webkit-clip-path: inset(100% 0 0 0);
+  clip-path: inset(100% 0 0 0);
+}
+.animate .word {
+  -webkit-transform: translateX(-50%) translateY(0);
+  transform: translateX(-50%) translateY(0);
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+.shutter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: cadetblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #dcc5b7;
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+  font-size: 30pt;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 30;
+
+  -webkit-transition: -webkit-clip-path 1s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+  transition: clip-path 1s cubic-bezier(0.25, 0.74, 0.22, 0.99);
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+.animate .shutter {
+  -webkit-clip-path: inset(0 0 100% 0);
+  clip-path: inset(0 0 100% 0);
+}
